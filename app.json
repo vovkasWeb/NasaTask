@@ -1,0 +1,17 @@
+{
+  "expo": {
+    "name": "nasa-react",
+    "slug": "react-nasa-api",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "0f1c0709-5441-4038-8550-0399fa4f28dd"
+      }
+    },
+    "owner": "den_8888"
+  },
+  "name": "nasa-react"
+}
