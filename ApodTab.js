@@ -52,14 +52,14 @@ const ApodTab = () => {
         style={[styles.arrowButton, styles.leftArrow]}
         activeOpacity={0.7}
       >
-        <Text style={styles.arrowText}>{'<'}</Text>
+        <Text style={styles.arrowText}>{'предудущие'}</Text>
       </TouchableOpacity>
       <TouchableOpacity
         onPress={handleNext}
         style={[styles.arrowButton, styles.rightArrow]}
         activeOpacity={0.7}
       >
-        <Text style={styles.arrowText}>{'>'}</Text>
+        <Text style={styles.arrowText}>{'следуйщее'}</Text>
       </TouchableOpacity>
     </View>
   );
@@ -68,12 +68,11 @@ const ApodTab = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    
   },
   image: {
     width: '100%',
-    height: 200,
+    height: 150,
   },
   title: {
     fontSize: 24,
@@ -94,8 +93,8 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 20,
     paddingHorizontal: 20,
-    backgroundColor: '#000',
-    borderRadius: 25,
+    backgroundColor: '#000a01',
+    borderRadius: 10,
     zIndex: 1, // Set a higher z-index to make the buttons appear on top
   },
   leftArrow: {

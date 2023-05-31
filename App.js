@@ -1,29 +1,33 @@
-import React, { useState} from 'react';
-import { View, Text, StyleSheet, TouchableOpacity,Image } from 'react-native';
-import ApodTab from './ApodTab';
-import AsteroidsTab from './AsteroidsTab';
-import EarthTab from './EarthTab';
-import MarsTab from './MarsTab';
-import EpicTab from './EpicTab';
-import Authorize from './Authorize';
-import { GlobalProvider } from './GlobalContext';
-import { GlobalContext } from './GlobalContext';
+import React, { useState } from "react";
+import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
+import ApodTab from "./ApodTab";
+import AsteroidsTab from "./AsteroidsTab";
+import EarthTab from "./EarthTab";
+import MarsTab from "./MarsTab";
+import EpicTab from "./EpicTab";
+import Authorize from "./Authorize";
+import { GlobalProvider } from "./GlobalContext";
+import { GlobalContext } from "./GlobalContext";
 
 export default function App() {
   const [activeTab, setActiveTab] = useState(0);
   const [isAuthorizeSubmitted, setIsAuthorizeSubmitted] = useState(false);
-  
+
   const handleAuthorizeSubmitted = (success) => {
     setIsAuthorizeSubmitted(success);
   };
 
   const tabs = [
-    {content: <Authorize onSubmitted={handleAuthorizeSubmitted} />},
-    { title: 'APOD', content: <ApodTab />, disabled: !isAuthorizeSubmitted },
-    { title: 'Asteroids', content: <AsteroidsTab />, disabled: !isAuthorizeSubmitted },
-    { title: 'Earth', content: <EarthTab />, disabled: !isAuthorizeSubmitted },
-    { title: 'Mars', content: <MarsTab />, disabled: !isAuthorizeSubmitted },
-    { title: 'EPIC', content: <EpicTab />, disabled: !isAuthorizeSubmitted }
+    { content: <Authorize onSubmitted={handleAuthorizeSubmitted} /> },
+    { title: "аpod", content: <ApodTab />, disabled: !isAuthorizeSubmitted },
+    {
+      title: "аsteroids",
+      content: <AsteroidsTab />,
+      disabled: !isAuthorizeSubmitted,
+    },
+    { title: "earth", content: <EarthTab />, disabled: !isAuthorizeSubmitted },
+    { title: "mars", content: <MarsTab />, disabled: !isAuthorizeSubmitted },
+    { title: "epic", content: <EpicTab />, disabled: !isAuthorizeSubmitted },
   ];
 
   return (
@@ -36,7 +40,7 @@ export default function App() {
               style={[
                 styles.tab,
                 activeTab === index ? styles.activeTab : null,
-                tab.disabled ? styles.disabledTab : null
+                tab.disabled ? styles.disabledTab : null,
               ]}
               onPress={() => setActiveTab(index)}
               disabled={tab.disabled}
@@ -44,7 +48,9 @@ export default function App() {
               {index === 0 ? (
                 <View style={styles.profileIconContainer}>
                   <Image
-                    source={{uri: 'https://cdn-icons-png.flaticon.com/512/2609/2609282.png'}} // Replace with the actual path to the profile photo
+                    source={{
+                      uri: "https://cdn-icons-png.flaticon.com/128/0/720.png",
+                    }} // Replace with the actual path to the profile photo
                     style={styles.profileIcon}
                   />
                 </View>
@@ -62,40 +68,40 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff'
+    backgroundColor: "#f7f7f6",
   },
   tabs: {
-    flexDirection: 'row',
+    flexDirection: "row",
     borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
+    borderBottomColor: "#dde3e1",
   },
   tab: {
-    paddingVertical: 20,
-    paddingHorizontal: 10
+    paddingVertical: 30,
+    paddingHorizontal: 11,
   },
   activeTab: {
     borderBottomWidth: 2,
-    borderBottomColor: '#000'
+    borderBottomColor: "#0b0909",
   },
   disabledTab: {
-    opacity: 0.5
+    opacity: 0.5,
   },
   tabTitle: {
-    fontSize: 14,
-    fontWeight: 'bold'
+    paddingTop: 20,
+    fontSize: 15,
   },
   content: {
-    flex: 1
+    flex: 1,
   },
   profileIconContainer: {
-    width: 30,
-    height: 30,
-    borderRadius: 30,
-    overflow: 'hidden',
+    paddingTop: 8,
+    width: 35,
+    height: 35,
+    overflow: "hidden",
   },
   profileIcon: {
-    width: '100%',
-    height: '100%',
-    resizeMode: 'cover',
+    width: "100%",
+    height: "100%",
+    resizeMode: "cover",
   },
 });

@@ -1,17 +1,17 @@
 {
   "expo": {
     "name": "nasa-react",
-    "slug": "react-nasa-api",
+    "slug": "mytest",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
     ],
     "extra": {
       "eas": {
-        "projectId": "0f1c0709-5441-4038-8550-0399fa4f28dd"
+        "projectId": "73a9a9b6-2b93-48b1-80d0-03f1726727e2"
       }
     },
-    "owner": "den_8888"
+    "owner": "vovkasweb"
   },
   "name": "nasa-react"
 }
